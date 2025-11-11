@@ -58,25 +58,74 @@ body {
     height: 32px;
 }
 
-/* Обо мне */
+/* About Section */
 #about {
     padding: 96px 0;
     position: relative;
     z-index: 1;
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
     box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
 }
 .about__header {
-    font-size: 82px;
+    font-size: 48px;
     font-weight: 700;
     color: #333;
+    line-height: 1.2;
+}
+.text-highlight {
+    background: linear-gradient(120deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .about__intro {
-    font-size: 24px;
-    color: #757575;
+    font-size: 20px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+.about__intro .badge {
+    font-size: 14px;
+    padding: 8px 16px;
+    font-weight: 500;
 }
 .about__description {
     font-size: 18px;
+    color: #666;
+    line-height: 1.7;
+}
+.about__interests h5 {
+    font-size: 20px;
+    font-weight: 600;
     color: #333;
+}
+.interests-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(34, 60, 80, 0.1);
+    transition: all .3s ease;
+}
+.interest-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 12px rgba(34, 60, 80, 0.15);
+}
+.interest-item svg {
+    color: #4facfe;
+    flex-shrink: 0;
+}
+.interest-item span {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
 }
 
 /* Последние работы */
@@ -156,9 +205,114 @@ body {
     opacity: 1;
 }
 
+/* Секция навыков */
+#skills {
+    background: #fff;
+    padding: 96px 0;
+}
+.skills__title {
+    display: block;
+    position: absolute;
+    top: -.5rem;
+    left: 50%;
+    width: 320px;
+    margin-left: -160px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    color: #757575;
+}
+.skill-card {
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0px 3px 7px 1px rgba(34, 60, 80, 0.1);
+    transition: all .3s ease;
+    text-align: center;
+    height: 100%;
+}
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px 2px rgba(34, 60, 80, 0.15);
+}
+.skill-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+.skill-icon svg {
+    width: 36px;
+    height: 36px;
+    color: #333;
+}
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+.vue-icon {
+    background: #e8f5e9;
+}
+.vue-icon svg {
+    color: #42b883;
+}
+.python-icon {
+    background: #fff3e0;
+}
+.python-icon svg {
+    color: #3776ab;
+}
+.postgres-icon {
+    background: #e3f2fd;
+}
+.postgres-icon svg {
+    color: #336791;
+}
+.skill-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+.skill-description {
+    font-size: 14px;
+    color: #757575;
+    line-height: 1.5;
+    margin: 0;
+}
+
 @media screen and (min-width: 1200px) {
     .project_card {
         height: 292px;
         width: 330px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .about__header {
+        font-size: 36px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .about__header {
+        font-size: 32px;
+    }
+    .about__intro {
+        font-size: 18px;
+    }
+    .interests-grid {
+        flex-direction: column;
+    }
+    .interest-item {
+        width: 100%;
+    }
+    .skill-card {
+        margin-bottom: 20px;
     }
 }
